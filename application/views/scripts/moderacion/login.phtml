@@ -1,0 +1,22 @@
+<?php $this->headStyle()->captureStart();?>
+label {
+	display: block;
+}
+.error {
+	padding: 10px; margin: 10px;
+	background-color: #fdd;
+	border: 1px solid #f44;
+}
+<?php $this->headStyle()->captureEnd();?>
+<?php if($this->error):?>
+<div class="error">Usuario o contraseñas inválidos.</div>
+<?php endif;?>
+<form action="<?php echo $this->baseUrl('/moderacion/login');?>" method="POST">
+	<fieldset><legend>Login Moderacion</legend>
+		<label for="usuario">Usuario:</label>
+		<input type="text" name="usuario" id="usuario" value="" /><br />
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password" value="" />
+		<input type="submit" name="Submit" value="Ingresar" />
+	</fieldset>
+</form>

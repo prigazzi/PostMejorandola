@@ -1,0 +1,30 @@
+<?php $this->headScript()->captureStart();?>
+Array.prototype.toObject = function()
+{
+	var o = {};
+	for(var i=0; i < this.length; i++) {
+		o[this[i]]='';
+	}
+	return o;
+}
+
+$(function(){	
+	$('a.error').click(function(e){
+		e.preventDefault();
+		$e = $(this.hash);
+		if(this.hash in ['#nombre', '#email', '#edad', '#provincia', '#localidad'].toObject())
+			$('#siguiente').click();
+		else
+			$('#anterior').click();
+		$(this.hash).focus();
+	});
+});
+<?php $this->headScript()->captureEnd();?>
+<div class="errors">
+	<p>Se produjeron algunos errores al intentar enviar tu idea.</p>
+	<ul>
+	<?php foreach($this->form->getErrors() as $name => $errors): if(count($errors)):?>
+		<li><a class="error" href="#<?php echo $name;?>"><?php echo ucfirst($name);?></a></li>
+	<?php endif; endforeach;?>
+	</ul>
+</div>

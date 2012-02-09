@@ -1,0 +1,9 @@
+<?php if(!$this->twitterInfo): ?>
+	Para dejar una nueva idea, debes estar logueado con Twitter.	
+<?php else: ?>
+	<?php if($this->form->isErrors())
+	{
+		echo $this->partial('partials/form-errors.phtml', array('form' => $this->form));	
+	}
+	echo $this->form->setAction($this->baseUrl('/ideas/agregar')); ?>
+<?php endif; ?>

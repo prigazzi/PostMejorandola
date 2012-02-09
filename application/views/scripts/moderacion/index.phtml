@@ -1,0 +1,21 @@
+<?php $this->headScript()->captureStart();?>
+$(function(){
+	$('a.moderacion').click(function(e){
+		e.preventDefault();
+		var $link = $(this);
+		var id = this.hash.substr(1);
+		var accion = $link.hasClass('aprobar')?'aprobar':'eliminar';
+		$.ajax({
+			url: '<?php echo $this->baseUrl('/moderacion/idea');?>',
+			data: {'id': id, 'accion': accion},
+			type: 'post'
+		});
+		$link.parent().parent().fadeOut();
+	});
+});
+<?php $this->headScript()->captureEnd();?>
+<h2>Ideas en moderacion</h2>
+<?php if($this->ideas): foreach($this->ideas as $idea):
+	echo $this->partial('partials/ideas-moderacion.phtml', array('idea' => $idea)); 
+endforeach;endif;?>
+<?php echo $this->paginationControl($this->ideas, 'Sliding', 'partials/pagination.phtml'); ?>

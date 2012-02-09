@@ -1,0 +1,111 @@
+@CHARSET "UTF-8";
+
+#header ul {
+	margin: 10px;
+	padding: 3px;
+	list-style-type: none;
+}
+	#header ul li {
+		display: inline;
+		margin-left: 10px;
+	}
+
+.submit-right {
+	float: right;
+}
+
+div.errors {
+	border: 1px solid #ff8888;
+	background-color: #ffdddd;
+	padding: 10px;
+	font-size: 12px;
+	width: 400px;
+}
+
+.focused {
+	background-color: #FFF7C0;
+}
+
+dd {
+	position: relative;
+}
+
+.description {
+	display:none;
+	position: absolute;
+	background-color: #fdfdfd;
+	border: 1px solid #ededed;
+	margin: 0;
+	padding: 5px;
+	left: 500px;
+	top: 0;
+}
+
+.idea {
+	position: relative;
+	border-top: 1px solid #efefef;
+	border-left: 1px solid #efefef;
+	border-right: 3px solid #dedede;
+	border-bottom: 3px solid #dedede;
+	margin: 10px;
+	padding: 5px;
+}
+
+.idea blockquote {
+	margin-right: 120px;
+}
+
+div.ciudad {border-color: #fcc;}
+div.provincia {border-color: #cfc;}
+div.pais {border-color: #ccf;}
+
+p.problema {
+	position: absolute;
+	padding: 20px;
+	margin: 0;
+	background-color: white;
+	z-index: 200;
+}
+
+div.ciudad p.problema {border: 1px solid #fcc;}
+div.provincia p.problema {border: 1px solid #cfc;}
+div.pais p.problema {border: 1px solid #ccf;}
+
+div.puntuacion {
+	position: absolute;
+	width: 80px;
+	top: 10px;
+	right: 10px;
+}
+
+div.puntuacion span {
+	color: white;
+	-moz-border-radius: 4px;
+	background-color: #555;
+	display: block;
+	text-align: center;
+	font-size: 28px;
+	line-height: 40px;
+}
+
+div.puntuacion span.gusta{ background-color: #060; }
+div.puntuacion span.nogusta{ background-color: #600; }
+
+div.puntuacion a.disabled { color: #ddd }
+a.file {
+	padding-left: 20px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center left;
+}
+a.pdf {background-image: url('../images/fileicons/pdf.png'); }
+a.doc {background-image: url('../images/fileicons/doc.png'); }
+a.jpg {background-image: url('../images/fileicons/jpg.png'); }
+a.png {background-image: url('../images/fileicons/png.png'); }
+a.gif {background-image: url('../images/fileicons/gif.png'); }
+a.xls {background-image: url('../images/fileicons/xls.png'); }
+
+a.moderacion{font-size: 12px; font-family: Arial, sans-serif;}
+a.aprobar {color: #0a0}
+a.eliminar{color: #a00}
+

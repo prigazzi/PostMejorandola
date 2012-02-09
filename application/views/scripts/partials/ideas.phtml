@@ -1,0 +1,15 @@
+<?php $disabled = in_array($this->idea->id, $this->votadas)?'disabled':''; ?>
+<div class="idea">
+	<h3><?php echo $this->idea->nombre ?></h3>
+	<img src="<?php echo $this->idea->avatar; ?>" />
+	<?php echo $this->idea->twitter?>:
+	<blockquote>
+		<?php echo $this->idea->idea;?>
+	</blockquote>
+
+	<div class="puntuacion" id="idea<?php echo $this->idea->id?>">
+		<span><?php echo $this->idea->votos; ?></span>
+		<a class="gusta <?php echo $disabled ?>" href="#">Me gusta!</a>
+		<a class="nogusta <?php echo $disabled ?>" href="#">Mala idea</a>
+	</div>
+</div>

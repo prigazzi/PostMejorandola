@@ -1,0 +1,7 @@
+<?php if($this->aviso):?>
+	Gracias por comentarnos tu idea! 
+<?php endif;?>
+<?php if($this->ideas): foreach($this->ideas as $idea):
+	echo $this->partial('partials/ideas.phtml', array('idea' => $idea, 'votadas' => $this->votadas));
+endforeach;endif;?>
+<?php echo $this->paginationControl($this->ideas, 'Sliding', 'partials/pagination.phtml'); ?>

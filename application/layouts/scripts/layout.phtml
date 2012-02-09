@@ -1,0 +1,42 @@
+<?php echo $this->doctype(); ?>
+<html>
+	<head>
+		<?php echo $this->headMeta()
+						->appendHttpEquiv('Content-Type', 'text/html; charset=utf-8'); ?>
+		<?php echo $this->headTitle('Banco de Ideas')
+						->setSeparator(' - ');?>
+		<?php echo $this->headLink()
+						->appendStylesheet($this->baseUrl('css/screen.css'));?>
+		<?php echo $this->headStyle(); ?>
+		<?php echo $this->headScript()
+						->prependFile($this->baseUrl('js/main.js'))
+						->prependFile($this->baseUrl('js/jquery-1.3.2.min.js')); ?>
+	</head>
+	<body>
+		<div id="wrapper" class="page">
+			<div id="header">
+			<ul>
+				<li><a href="<?php echo $this->url(array('action' => 'mas-votadas', 'controller' => 'ideas'))?>">Ver Ideas más votadas</a></li>
+				<li><a href="<?php echo $this->url(array('action' => 'nuevas', 'controller' => 'ideas'))?>">Ver las últimas Ideas</a></li>
+				<li><a href="<?php echo $this->url(array('action' => 'agregar', 'controller' => 'ideas'))?>">Presentar una Idea</a></li>
+				<?php if(! $this->twitterInfo): ?>
+				<li><a href="<?php echo $this->url(array('action' => 'twitter', 'controller' => 'login'))?>">Conectate con Twitter</a></li>
+				<?php else: ?>
+				<li>
+					<?php echo $this->partial(
+						'twitter-profile.phtml', 
+						$this->twitterInfo); ?>
+				</li>
+				<?php endif; ?>
+			</ul>
+			</div>
+			<div id="content">
+				<div id="cL" class="l">
+				<?php echo $this->layout()->content; ?>	
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	<?php echo $this->inlineScript();?>
+	</body>
+</html>

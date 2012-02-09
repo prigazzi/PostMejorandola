@@ -1,0 +1,10 @@
+<div class="idea">
+	<?php echo $this->idea->nombre?>:
+	<blockquote>
+		<?php echo $this->idea->idea;?>
+	</blockquote>
+	<div style="position: absolute; right: 10px; bottom: 10px;">
+		<a class="moderacion aprobar" href="#<?php echo $this->idea->id?>">Aprobar</a> |
+		<a class="moderacion eliminar" href="#<?php echo $this->idea->id?>">Eliminar</a>
+	</div>
+</div>
